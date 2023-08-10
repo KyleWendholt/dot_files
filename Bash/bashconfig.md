@@ -3,6 +3,7 @@
 ## Bashrc
 
 Add to end of file, changing Reopos to your repo directory
+
 ```bash
 # User specific aliases and functions
 
@@ -17,4 +18,5 @@ alias dev="{ code $Repos & google-chrome github.com & disown -r & flatpak run io
 ```
 
 ## Starship
+
 Add [starship.toml](starship.toml) to ~/.config
