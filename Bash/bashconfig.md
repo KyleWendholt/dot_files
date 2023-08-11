@@ -2,7 +2,7 @@
 
 ## Bashrc
 
-Add to end of file, changing Reopos to your repo directory
+Add to end of file, changing Repos to your repo directory
 
 ```bash
 # User specific aliases and functions
