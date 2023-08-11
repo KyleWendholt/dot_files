@@ -14,7 +14,7 @@ eval "$(starship init bash)"
 
 alias sys_update='sudo dnf update && flatpak update'
 alias myip='curl ipinfo.io/ip && echo'
-alias dev="{ code $Repos & google-chrome github.com & disown -r & flatpak run io.github.shiftey.Desktop & disown; } >/dev/null 2>&1"
+alias dev="{ code '$Repos' & google-chrome github.com & disown -r & flatpak run io.github.shiftey.Desktop & disown; } >/dev/null 2>&1"
 ```
 
 ## Starship
