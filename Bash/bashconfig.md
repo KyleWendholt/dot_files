@@ -19,4 +19,10 @@ alias dev="{ code '$Repos' & google-chrome github.com & disown -r & flatpak run 
 
 ## Starship
 
+install starship using dnf
+```bash
+dnf copr enable atim/starship
+dnf install starship
+```
+
 Add [starship.toml](starship.toml) to ~/.config
