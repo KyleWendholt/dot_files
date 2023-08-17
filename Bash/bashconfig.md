@@ -7,11 +7,13 @@ Add to end of file, changing Repos to your repo directory
 ```bash
 # User specific aliases and functions
 
-Repos="$HOME/Repos"
+# Put path to Repositories folder
+Repos=""
 
 
 eval "$(starship init bash)"
 
+alias repos="cd '$Repos'"
 alias sys_update='sudo dnf update && flatpak update'
 alias myip='curl ipinfo.io/ip && echo'
 alias dev="{ code '$Repos' & google-chrome github.com & disown -r & flatpak run io.github.shiftey.Desktop & disown; } >/dev/null 2>&1"
