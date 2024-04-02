@@ -5,7 +5,7 @@
 Add to end of file, changing Repos to your repo directory
 And Editor to default editor (has been tested with vscode and neovim)
 
-```bash
+````bash
 # User specific aliases and functions
 
 Repos=''
@@ -13,10 +13,8 @@ Editor=''
 
 eval "$(starship init bash)"
 
-alias sys_update='sudo dnf update && flatpak update'
+alias sys_update=''
 alias myip='curl ipinfo.io/ip && echo'
-alias dev="{ google-chrome github.com & disown -r & flatpak run io.github.shiftey.Desktop & disown; } >/dev/null 2>&1 && cd $Repos && $Editor $Repos"
-```
 
 ## Starship
 Make sure to download a nerd font before use.
@@ -24,10 +22,11 @@ Make sure to download a nerd font before use.
 
 Add [starship.toml](starship.toml) to ~/.config
 
-## Neovim 
+## Neovim
 ```bash
 sudo dnf install nvim
-```
+````
+
 Follow [NvChad](https://nvchad.com/docs/quickstart/install) guide
 
 Default works fine.
