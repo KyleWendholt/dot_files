@@ -23,30 +23,32 @@ style = "Bold Italic"
 dynamic_title = true
 opacity = 0.75
 
-[colors.bright]
-black = "#5C5C61"
-blue = "#6943FF"
-cyan = "#9EFFFF"
-green = "#3AD900"
-magenta = "#FF628C"
-red = "#FF000D"
-white = "#FFFFFF"
-yellow = "#FAD000"
-
-[colors.cursor]
-cursor = "#FAD000"
-text = "#1E1E3F"
-
 [colors.normal]
-black = "#000000"
-blue = "#6943FF"
-cyan = "#9EFFFF"
-green = "#3DB72A"
-magenta = "#FF628C"
-red = "#D52822"
-white = "#DBDBE0"
-yellow = "#FAD000"
+black = '#1b1d2b'
+red = '#ff757f'
+green = '#c3e88d'
+yellow = '#ffc777'
+blue = '#82aaff'
+magenta = '#c099ff'
+cyan = '#86e1fc'
+white = '#828bb8'
 
-[colors.primary]
-background = "#1E1E3F"
-foreground = "#FFFFFF"
+# Bright colors
+[colors.bright]
+black = '#444a73'
+red = '#ff757f'
+green = '#c3e88d'
+yellow = '#ffc777'
+blue = '#82aaff'
+magenta = '#c099ff'
+cyan = '#86e1fc'
+white = '#c8d3f5'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#ff966c'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#c53b53'
