@@ -1,4 +1,20 @@
 ---
-- name: Perform system updates
-  ansible.package:
-    name:
+- name: configure dotfiles
+  hosts: localhost
+  tasks:
+  - name: Install packages
+    ansible.builtin.package:
+      name: 
+        - neovim
+        - alacritty
+      state: latest
+
+  - name: Configure alacritty
+    copy:
+      src: bash/alacritty.toml
+      dest: ~/.config/alacritty/alacritty.toml
+  
+  - name: Configure neovim
+    copy:
+      src: kickstart.nvim/
+      dest: ~/.config/nvim/
