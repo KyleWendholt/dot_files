@@ -14,7 +14,7 @@ echo "Installing necessary packages..."
 
 if [[ "$distro" = "1" ]]; then
 	sudo pacman -Syu
-	sudo pacman -S starship ttf-firacode-nerd git nvim tmux lazygit zsh fzf ripgrep fd
+	sudo pacman -S starship ttf-firacode-nerd git neovim tmux lazygit zsh fzf ripgrep fd
 fi
 if [[ "$distro" = "2" ]]; then
 	sudo apt update
@@ -32,15 +32,17 @@ fi
 
 echo "Setting up dotfiles..."
 
-git clone https://github.com/KyleWendholt/kickstart.nvim.git ~/.config/nvim
+#gh auth login
 
-git clone https://github.com/KyleWendholt/dot_files.git ~/.dot_files
+gh repo clone KyleWendholt/dot_files ~/.dot_files
+
+gh repo clone KyleWendholt/kickstart.nvim ~/.config/nvim
 
 cp ~/cheatcheat.md ~/Documents/cheatcheat.md
 
-cp ~/.dot_files/.zshrc ~/.zshrc
+cp ~/.dot_files/zshrc ~/.zshrc
 
-cp ~/.dot_files/.tmux.conf ~/tmux/tmux.conf
+cp ~/.dot_files/tmux.conf ~/tmux/tmux.conf
 
 cp ~/.dot_files/alacritty.toml ~/.config/alacritty/alacritty.toml
 
@@ -49,9 +51,9 @@ echo "Is this a work machine? (y/n)"
 read work
 
 if [[ "$work" = "y" ]]; then
-	cp ~/.dot_files/.gitconfig_work ~/.gitconfig
+	cp ~/.dot_files/gitconfig_work ~/.gitconfig
 else
-	cp ~/.dot_files/.gitconfig_personal ~/.gitconfig
+	cp ~/.dot_files/gitconfig_personal ~/.gitconfig
 fi
 
 echo "Change default shell to zsh..."
