@@ -38,11 +38,13 @@ gh repo clone KyleWendholt/dot_files ~/.dot_files
 
 gh repo clone KyleWendholt/kickstart.nvim ~/.config/nvim
 
-cp ~/cheatcheat.md ~/Documents/cheatcheat.md
+cp ~/.dot_files/cheatcheat.md ~/Documents/cheatcheat.md
 
 cp ~/.dot_files/zshrc ~/.zshrc
 
-cp ~/.dot_files/tmux.conf ~/tmux/tmux.conf
+mkdir ~/.config/tmux
+
+cp ~/.dot_files/tmux.conf ~/.config/tmux/tmux.conf
 
 cp ~/.dot_files/alacritty.toml ~/.config/alacritty/alacritty.toml
 

@@ -1,0 +1,24 @@
+---
+- name: Configuration for new linux computer
+  hosts: localhost
+  vars_file:
+    - ./vars.yaml
+  tasks:
+    - name: Configure dotfiles
+      import_tasks:
+        file: dotfiles.yaml
+
+    - name: Arch specific config
+      import_tasks:
+        file: arch.yaml
+      when: ansible_facts.ansible_os_family = "Archlinux"
+
+    - name: Debian specific config
+      import_tasks:
+        file: debian.yaml
+      when: ansible_facts.ansible_os_family = "Debianlinux"
+
+    - name: RedHat specific config
+      import_tasks:
+        file: redhat.yaml
+      when: ansible_facts.ansible_os_family = "RedHatlinux"
