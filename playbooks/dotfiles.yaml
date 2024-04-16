@@ -1,0 +1,23 @@
+- name: Copy dot files over
+  ansible.builtin.copy:
+    ansible.builtin.copy:
+      src: ./.config_files
+      dest: /home/{{ansible.username}}/.config
+
+- name: Configure git editor
+  community.general.git_config:
+    name: core.editor
+    scope: system
+    value: nvim
+
+- name: Config git email 
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ email }}"
+
+- name: Config git name
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "Kyle Wendholt"

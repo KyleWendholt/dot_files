@@ -1,0 +1,15 @@
+- name: Update packages/cache
+  community.general.pacman:
+    update_cache: true
+    update: true
+
+- name: Install packages
+  community.general.pacman:
+    name:
+      - git
+      - fzf
+      - neovim
+      - tmux
+      - lazygit
+      - ripgrep
+      - zsh

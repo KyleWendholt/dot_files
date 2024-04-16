@@ -1,0 +1,16 @@
+- name: Update all packages
+  ansible.builtin.dnf:
+    name: "*"
+    state: latest
+    update_cache: true
+
+- name: Install packages
+  ansible.builtin.dnf:
+    name:
+      - git
+      - fzf
+      - neovim
+      - tmux
+      - lazygit
+      - ripgrep
+      - zsh

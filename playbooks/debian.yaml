@@ -1,0 +1,19 @@
+- name: Upgrade distro
+  ansible.builtin.apt:
+    upgrade: dist
+
+- name: Update all packages
+  ansible.builtin.apt:
+    name: "*"
+    state: latest
+
+- name: Install packages
+  ansible.builtin.apt:
+    pkg:
+      - git
+      - fzf
+      - neovim
+      - tmux
+      - lazygit
+      - ripgrep
+      - zsh
