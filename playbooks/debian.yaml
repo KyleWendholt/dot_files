@@ -2,13 +2,11 @@
   ansible.builtin.apt:
     upgrade: dist
     update_cache: true
-  become: true
 
 - name: Update all packages
   ansible.builtin.apt:
     name: "*"
     state: latest
-  become: true
 
 - name: Add lazygit apt repo
   ansible.builtin.apt_repository:
@@ -24,5 +22,3 @@
       - tmux
       - ripgrep
       - zsh
-  become: true
-

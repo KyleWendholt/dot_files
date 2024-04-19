@@ -13,16 +13,19 @@
       import_tasks:
         file: arch.yaml
       when: ansible_os_family == "Archlinux"
+      become: true
 
     - name: Debian specific config
       import_tasks:
         file: debian.yaml
       when: ansible_os_family == "Debian"
+      become: true
 
     - name: RedHat specific config
       import_tasks:
         file: redhat.yaml
       when: ansible_os_family == "RedHat"
+      become: true
 
     - name: Configure dotfiles
       import_tasks:
