@@ -1,6 +1,7 @@
 - name: Upgrade distro
   ansible.builtin.apt:
     upgrade: dist
+    update_cache: true
   become: true
 
 - name: Update all packages
