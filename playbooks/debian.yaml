@@ -1,11 +1,13 @@
 - name: Upgrade distro
   ansible.builtin.apt:
     upgrade: dist
+  become: true
 
 - name: Update all packages
   ansible.builtin.apt:
     name: "*"
     state: latest
+  become: true
 
 - name: Install packages
   ansible.builtin.apt:
@@ -17,3 +19,4 @@
       - lazygit
       - ripgrep
       - zsh
+  become: true

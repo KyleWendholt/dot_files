@@ -15,3 +15,4 @@
       - lazygit
       - ripgrep
       - zsh
+  become: true
