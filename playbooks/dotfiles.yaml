@@ -2,7 +2,7 @@
 - name: Copy dot files over
   ansible.builtin.copy:
     ansible.builtin.copy:
-      src: ./config_files
+      src: ../config_files
       dest: "{{ ansible_env.HOME }}/.config"
 
 - name: Configure git editor
