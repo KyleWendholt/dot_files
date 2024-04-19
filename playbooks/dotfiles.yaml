@@ -3,7 +3,7 @@
   ansible.builtin.copy:
     ansible.builtin.copy:
       src: ./config_files
-      dest: /home/{{ansible_user}}/.config
+      dest: "/home/{{ansible_user}}/.config"
 
 - name: Configure git editor
   community.general.git_config:
