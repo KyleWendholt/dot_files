@@ -1,3 +1,4 @@
+---
 - name: Copy dot files over
   ansible.builtin.copy:
     ansible.builtin.copy:
