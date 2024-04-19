@@ -9,14 +9,19 @@
     state: latest
   become: true
 
+- name: Add lazygit apt repo
+  ansible.builtin.apt_repository:
+    repo: ppa:lazygit-team/release
+
 - name: Install packages
   ansible.builtin.apt:
     pkg:
       - git
       - fzf
       - neovim
-      - tmux
       - lazygit
+      - tmux
       - ripgrep
       - zsh
   become: true
+
