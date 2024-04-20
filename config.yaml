@@ -1,6 +1,10 @@
 ---
 - name: Configuration for new linux install
   hosts: localhost
+  vars:
+    debug_flag: false
+  vars_file:
+    vars.yaml
   vars_prompt:
     - name: email
       prompt: "Input Email:"
@@ -8,25 +12,26 @@
     - name: print facts
       ansible.builtin.debug:
         var: ansible_os_family
+      when: debug_flag
 
     - name: Arch specific config
       import_tasks:
-        file: arch.yaml
+        file: tasks/arch.yaml
       when: ansible_os_family == "Archlinux"
       become: true
 
     - name: Debian specific config
       import_tasks:
-        file: debian.yaml
+        file: tasks/debian.yaml
       when: ansible_os_family == "Debian"
       become: true
 
     - name: RedHat specific config
       import_tasks:
-        file: redhat.yaml
+        file: tasks/redhat.yaml
       when: ansible_os_family == "RedHat"
       become: true
 
     - name: Configure dotfiles
       import_tasks:
-        file: dotfiles.yaml
+        file: tasks/dotfiles.yaml
