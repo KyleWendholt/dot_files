@@ -4,7 +4,7 @@
   vars:
     debug_flag: false
   vars_file:
-    vars.yaml
+    - vars.yaml
   vars_prompt:
     - name: email
       prompt: "Input Email:"
