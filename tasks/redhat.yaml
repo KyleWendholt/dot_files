@@ -5,6 +5,10 @@
     update_cache: true
   become: true
 
+- name: Enable lazygit copr repo
+  community.general.copr:
+    host: atim/lazygit
+
 - name: Install packages
   ansible.builtin.dnf:
     name:
