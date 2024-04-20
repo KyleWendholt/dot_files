@@ -3,7 +3,7 @@
   hosts: localhost
   vars:
     debug_flag: false
-  vars_file:
+  vars_files:
     - vars.yaml
   vars_prompt:
     - name: email
