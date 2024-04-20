@@ -3,11 +3,10 @@
     name: "*"
     state: latest
     update_cache: true
-  become: true
 
 - name: Enable lazygit copr repo
   community.general.copr:
-    host: atim/lazygit
+    name: atim/lazygit
 
 - name: Install packages
   ansible.builtin.dnf:
@@ -19,4 +18,3 @@
       - lazygit
       - ripgrep
       - zsh
-  become: true
