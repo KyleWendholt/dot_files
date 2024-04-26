@@ -2,14 +2,30 @@
 
 Show all sessions
 
-```
-Ctrl + B, s
-```
+ctrl+b=prefix
+ctrl+hjkl=switch panes
+
+c=create window
+d=disconnect
+n=next window
+space=toggle between pane layouts
+-=split horizontal pane
+|=split vertical pane
+s=session view
+w=window view
+z=fullscreen toggle
+
 
 # Nvim
 
 I=insert mode beginning of the line
 gi=insert last insert location
+ctrl+a=+1
+ctrl+x=-1
+
+## tricks
+block highlight section, then A or I to add to begiining or end. must use ESC intead of ctrl c though. need to select to end of line for A, so use $ if need to append to end of line
+
 
 ### insert mode only
 ctrl+h=delete last char typed
@@ -20,9 +36,6 @@ ctrl+r"=put
 u=undo
 U=undo all changes to last line you changed
 ctrl+r=redo
-
-:sp=horizontal split
-:vs=vertical split
 
 gt=next tab
 gT=previous tab
@@ -57,7 +70,6 @@ K=help for word
 n=next match
 N=previous match
 *=/{word}
-:noh=remove highlighting
 
 ctrl+O=jump back
 ctrl+I=jump forwards
