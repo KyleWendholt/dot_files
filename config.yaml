@@ -3,8 +3,8 @@
   hosts: localhost
   vars:
     debug_flag: false
-  vars_files:
-    - vars.yaml
+  # vars_files:
+  #   - vars.yaml
   vars_prompt:
     - name: email
       prompt: "Input Email:"
