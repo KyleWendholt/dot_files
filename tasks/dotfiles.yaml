@@ -1,9 +1,13 @@
 ---
 - name: Copy dot files over
   ansible.builtin.copy:
-    ansible.builtin.copy:
-      src: ../config_files
-      dest: "{{ ansible_env.HOME }}/.config"
+    src: ../config_files
+    dest: "{{ ansible_env.HOME }}/.config"
+
+- name: Copy zshrc over
+  ansible.builtin.copy:
+    src: zshrc
+    dest: "{{ ansible_env.HOME }}/.zshrc"
 
 - name: Configure git editor
   community.general.git_config:
