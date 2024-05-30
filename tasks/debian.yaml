@@ -1,16 +1,21 @@
-- name: Upgrade distro
-  ansible.builtin.apt:
-    upgrade: dist
-    update_cache: true
-
-- name: Update all packages
-  ansible.builtin.apt:
-    name: "*"
-    state: latest
+# - name: Upgrade distro
+#   ansible.builtin.apt:
+#     upgrade: dist
+#     update_cache: true
+#
+# - name: Update all packages
+#   ansible.builtin.apt:
+#     name: "*"
+#     state: latest
 
 # - name: Add lazygit apt repo
 #   ansible.builtin.apt_repository:
 #     repo: ppa:lazygit-team/release
+
+# - name: Add waybar ppa
+#   ansible.builtin.apt_repository:
+#     repo: ppa:nschloe/waybar
+#   become: true
 
 - name: Install packages
   ansible.builtin.apt:
@@ -22,3 +27,29 @@
       - tmux
       - ripgrep
       - zsh
+      - curl
+      - sway
+      - waybar
+  become: true
+
+- name: Install FiraCode Nerd Font
+  import_tasks:
+    file: ./firacode.yaml
+
+# - name: Get Starship installer
+#   ansible.builtin.command: "curl -sS https://starship.rs/install.sh"
+#   register: starship_install
+#
+# - name: print installer
+#   ansible.builtin.debug:
+#     var: starship_install.stdout
+#   when: debug_flag
+#
+# - name: install starship
+#   ansible.builtin.command: "{{starship_install.stdout}}"
+#   register: install_results
+#
+# - name: print install results
+#   ansible.builtin.debug:
+#     var: install_results
+#   when: debug_flag

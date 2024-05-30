@@ -2,7 +2,7 @@
 - name: Configuration for new linux install
   hosts: localhost
   vars:
-    debug_flag: false
+    debug_flag: True
   vars_files:
     - vars.yaml
   tasks:
@@ -15,19 +15,16 @@
       import_tasks:
         file: tasks/arch.yaml
       when: ansible_os_family == "Archlinux"
-      become: true
 
     - name: Debian specific config
       import_tasks:
         file: tasks/debian.yaml
       when: ansible_os_family == "Debian"
-      become: true
 
     - name: RedHat specific config
       import_tasks:
         file: tasks/redhat.yaml
       when: ansible_os_family == "RedHat"
-      become: true
 
     - name: Set zshell
       ansible.builtin.user:
@@ -39,3 +36,22 @@
       ansible.builtin.git:
         dest: "{{ansible_env.HOME}}/.tmux/plugins/tpm"
         repo: https://github.com/tmux-plugins/tpm
+
+    - name: Configure git editor
+      community.general.git_config:
+        name: core.editor
+        scope: system
+        value: nvim
+      become: true
+
+    - name: Config git email 
+      community.general.git_config:
+        name: user.email
+        scope: global
+        value: "{{ email }}"
+
+    - name: Config git name
+      community.general.git_config:
+        name: user.name
+        scope: global
+        value: "Kyle Wendholt"

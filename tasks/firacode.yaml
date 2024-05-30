@@ -1,0 +1,7 @@
+- name: Unzip Fonts
+  ansible.builtin.unarchive:
+    src: ../files/FiraCode.zip
+    dest: "{{ansible_env.HOME}}/.local/share/fonts"
+
+- name: Install Fonts
+  ansible.builtin.command: fc-cache -v -f

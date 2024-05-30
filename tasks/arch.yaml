@@ -15,4 +15,5 @@
       - lazygit
       - ripgrep
       - zsh
+      - ttf-firacode-nerd
   become: true

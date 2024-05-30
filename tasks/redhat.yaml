@@ -3,10 +3,12 @@
     name: "*"
     state: latest
     update_cache: true
+  become: true
 
 - name: Enable lazygit copr repo
   community.general.copr:
     name: atim/lazygit
+  become: true
 
 - name: Install packages
   ansible.builtin.dnf:
@@ -18,3 +20,8 @@
       - lazygit
       - ripgrep
       - zsh
+  become: true
+
+- name: Install FiraCode Nerd Font
+  import_tasks:
+    file: ./firacode.yaml
