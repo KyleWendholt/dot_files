@@ -3,11 +3,8 @@
   hosts: localhost
   vars:
     debug_flag: false
-  # vars_files:
-  #   - vars.yaml
-  vars_prompt:
-    - name: email
-      prompt: "Input Email:"
+  vars_files:
+    - vars.yaml
   tasks:
     - name: print facts
       ansible.builtin.debug:
@@ -32,6 +29,8 @@
       when: ansible_os_family == "RedHat"
       become: true
 
-    - name: Configure dotfiles
-      import_tasks:
-        file: tasks/dotfiles.yaml
+    - name: Set zshell
+      ansible.builtin.user:
+        name: "{{ ansible_env.USER }}"
+        shell: /bin/zsh
+      become: true
