@@ -34,3 +34,8 @@
         name: "{{ ansible_env.USER }}"
         shell: /bin/zsh
       become: true
+
+    - name: Install Tmux package manager
+      ansible.builtin.git:
+        dest: "{{ansible_env.HOME}}/.tmux/plugins/tpm"
+        repo: https://github.com/tmux-plugins/tpm
