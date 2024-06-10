@@ -8,6 +8,12 @@ bindkey -v
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/kdubs/.zshrc'
 
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+	PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
